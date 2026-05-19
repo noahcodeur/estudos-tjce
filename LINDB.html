@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINDB – Decreto-Lei nº 4.657, de 4 de setembro de 1942</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f9f3f0 0%, #fce9e3 100%);
+            font-family: 'Nunito', sans-serif;
+            color: #3e3a39;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 0, 0, 0.04);
+            padding: 3rem 2.5rem;
+            transition: all 0.2s ease;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            body {
+                padding: 1rem 0.5rem;
+            }
+        }
+
+        /* Cabeçalho institucional */
+        .header-top {
+            text-align: center;
+            margin-bottom: 1.75rem;
+            color: #7f6e67;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .header-top span {
+            display: block;
+        }
+
+        .title-main {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #6b4e3d;
+            text-align: center;
+            line-height: 1.3;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.3px;
+        }
+
+        .subtitle-main {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #b0897c;
+            text-align: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .ementa {
+            font-style: italic;
+            font-weight: 500;
+            color: #8b6f63;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: #faf4f1;
+            padding: 0.75rem 1.5rem;
+            border-radius: 24px;
+            display: inline-block;
+            width: 100%;
+            font-size: 1.05rem;
+        }
+
+        .autoridade {
+            text-align: center;
+            font-weight: 600;
+            color: #5f4c42;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Artigos */
+        .artigo {
+            background: #fdfaf8;
+            border-left: 6px solid #e7cfc2;
+            border-radius: 18px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: background 0.15s ease;
+        }
+
+        .artigo:hover {
+            background: #fff8f5;
+        }
+
+        .artigo-titulo {
+            font-weight: 700;
+            color: #8b5e4b;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .artigo-conteudo {
+            font-weight: 500;
+            color: #3b3431;
+        }
+
+        .paragrafo {
+            margin: 0.65rem 0 0.65rem 1.2rem;
+            padding-left: 0.75rem;
+            border-left: 3px dotted #e0c7b8;
+            font-weight: 500;
+            color: #4f4540;
+        }
+
+        .revogado, .vetado {
+            color: #b3a098;
+            font-style: italic;
+            font-weight: 500;
+            text-decoration: line-through;
+            text-decoration-color: #d9c5ba;
+        }
+
+        .nota-vigencia {
+            font-size: 0.8rem;
+            color: #b2a196;
+            margin-left: 0.3rem;
+            font-weight: 600;
+            background: #f7eee9;
+            padding: 0.1rem 0.5rem;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .destaque-info {
+            background: #fceee7;
+            border-radius: 14px;
+            padding: 0.15rem 0.6rem;
+            font-weight: 700;
+            color: #7b5a48;
+            display: inline-block;
+            font-size: 0.85rem;
+            margin: 0.2rem 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #ead9d1;
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        .assinatura {
+            text-align: center;
+            font-weight: 700;
+            color: #5e4538;
+            margin: 1.8rem 0 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cidade-data {
+            text-align: center;
+            font-weight: 500;
+            color: #896e61;
+            margin-bottom: 1rem;
+        }
+
+        .rodape-nota {
+            font-size: 0.8rem;
+            color: #a5958c;
+            text-align: center;
+            margin-top: 2rem;
+            font-style: italic;
+            background: #faf5f2;
+            padding: 0.6rem;
+            border-radius: 20px;
+        }
+
+        /* Links sutis para referências */
+        a {
+            color: #9b7b6c;
+            text-decoration: none;
+            border-bottom: 1px dashed #c9af9f;
+        }
+
+        a:hover {
+            color: #634e41;
+            border-bottom: 1px solid #634e41;
+        }
+
+        /* Destaque para a Lei nova */
+        .lei-nova-mencao {
+            font-weight: 700;
+            color: #a5684a;
+        }
+
+        /* Títulos de seção */
+        .secao-letra {
+            font-weight: 700;
+            color: #6d5040;
+            margin-top: 0.5rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-top">
+            <span>Presidência da República</span>
+            <span>Casa Civil – Subchefia para Assuntos Jurídicos</span>
+        </div>
+
+        <h1 class="title-main">DECRETO-LEI Nº 4.657</h1>
+        <div class="subtitle-main">de 4 de setembro de 1942</div>
+
+        <div class="ementa">
+            Lei de Introdução às normas do Direito Brasileiro
+            <span style="display: block; font-size:0.8rem; font-weight:500; margin-top:0.2rem;">
+                (Redação dada pela Lei nº 12.376, de 2010)
+            </span>
+        </div>
+
+        <div class="autoridade">
+            O Presidente da República, usando da atribuição que lhe confere o artigo 180 da Constituição, decreta:
+        </div>
+
+        <!-- Artigo 1 -->
+        <div class="artigo">
+            <div class="artigo-titulo">
+                Art. 1º 
+            </div>
+            <div class="artigo-conteudo">
+                Salvo disposição contrária, a lei começa a vigorar em todo o país quarenta e cinco dias depois de oficialmente publicada.
+            </div>
+            <div class="paragrafo">
+                <strong>§ 1º</strong> Nos Estados estrangeiros, a obrigatoriedade da lei brasileira, quando admitida, se inicia três meses depois de oficialmente publicada. 
+                <span class="nota-vigencia">Vide Lei nº 1.991/1953, Lei nº 2.145/1953, Lei nº 2.410/1955, Lei nº 2.770/1956, Lei nº 3.244/1957, Lei nº 4.966/1966, Decreto-Lei nº 333/1967, Lei nº 2.807/1956, Lei nº 4.820/1965</span>
+            </div>
+            <div class="paragrafo revogado">
+                <strong>§ 2º</strong> (Revogado pela Lei nº 12.036, de 2009).
+            </div>
+            <div class="paragrafo">
+                <strong>§ 3º</strong> Se, antes de entrar a lei em vigor, ocorrer nova publicação de seu texto, destinada a correção, o prazo deste artigo e dos parágrafos anteriores começará a correr da nova publicação.
+            </div>
+            <div class="paragrafo">
+                <strong>§ 4º</strong> As correções a texto de lei já em vigor consideram-se lei nova.
+            </div>
+        </div>
+
+        <!-- Artigo 2 -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 2º</div>
+            <div class="artigo-conteudo">
+                Não se destinando à vigência temporária, a lei terá vigor até que outra a modifique ou revogue.
+            </div>
+            <div class="paragrafo"><strong>§ 1º</strong> A lei posterior revoga a anterior quando expressamente o declare, quando seja com ela incompatível ou quando regule inteiramente a matéria de que tratava a lei anterior.</div>
+            <div class="paragrafo"><strong>§ 2º</strong> A lei nova, que estabeleça disposições gerais ou especiais a par das já existentes, não revoga nem modifica a lei anterior.</div>
+            <div class="paragrafo"><strong>§ 3º</strong> Salvo disposição em contrário, a lei revogada não se restaura por ter a lei revogadora perdido a vigência.</div>
+        </div>
+
+        <!-- Artigo 3 -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 3º</div>
+            <div class="artigo-conteudo">Ninguém se escusa de cumprir a lei, alegando que não a conhece.</div>
+        </div>
+
+        <!-- Artigo 4 -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 4º</div>
+            <div class="artigo-conteudo">Quando a lei for omissa, o juiz decidirá o caso de acordo com a analogia, os costumes e os princípios gerais de direito.</div>
+        </div>
+
+        <!-- Artigo 5 -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 5º</div>
+            <div class="artigo-conteudo">Na aplicação da lei, o juiz atenderá aos fins sociais a que ela se dirige e às exigências do bem comum.</div>
+        </div>
+
+        <!-- Artigo 6 (importantíssimo) -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 6º <span class="destaque-info">Redação pela Lei nº 3.238/1957</span></div>
+            <div class="artigo-conteudo">
+                A Lei em vigor terá efeito imediato e geral, respeitados o ato jurídico perfeito, o direito adquirido e a coisa julgada.
+            </div>
+            <div class="paragrafo"><strong>§ 1º</strong> Reputa-se ato jurídico perfeito o já consumado segundo a lei vigente ao tempo em que se efetuou. <span class="nota-vigencia">Incluído pela Lei nº 3.238/1957</span></div>
+            <div class="paragrafo"><strong>§ 2º</strong> Consideram-se adquiridos assim os direitos que o seu titular, ou alguém por ele, possa exercer, como aqueles cujo começo do exercício tenha termo pré-fixo, ou condição pré-estabelecida inalterável, a arbítrio de outrem. <span class="nota-vigencia">Incluído pela Lei nº 3.238/1957</span></div>
+            <div class="paragrafo"><strong>§ 3º</strong> Chama-se coisa julgada ou caso julgado a decisão judicial de que já não caiba recurso. <span class="nota-vigencia">Incluído pela Lei nº 3.238/1957</span></div>
+        </div>
+
+        <!-- Artigo 7 -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 7º</div>
+            <div class="artigo-conteudo">A lei do país em que domiciliada a pessoa determina as regras sobre o começo e o fim da personalidade, o nome, a capacidade e os direitos de família.</div>
+            <div class="paragrafo"><strong>§ 1º</strong> Realizando-se o casamento no Brasil, será aplicada a lei brasileira quanto aos impedimentos dirimentes e às formalidades da celebração.</div>
+            <div class="paragrafo"><strong>§ 2º</strong> O casamento de estrangeiros poderá celebrar-se perante autoridades diplomáticas ou consulares do país de ambos os nubentes. <span class="nota-vigencia">Redação pela Lei nº 3.238/1957</span></div>
+            <div class="paragrafo"><strong>§ 3º</strong> Tendo os nubentes domicílio diverso, regerá os casos de invalidade do matrimônio a lei do primeiro domicílio conjugal.</div>
+            <div class="paragrafo"><strong>§ 4º</strong> O regime de bens, legal ou convencional, obedece à lei do país em que tiverem os nubentes domicílio, e, se este for diverso, a do primeiro domicílio conjugal.</div>
+            <div class="paragrafo"><strong>§ 5º</strong> O estrangeiro casado, que se naturalizar brasileiro, pode, mediante expressa anuência de seu cônjuge, requerer ao juiz, no ato de entrega do decreto de naturalização, se apostile ao mesmo a adoção do regime de comunhão parcial de bens... <span class="nota-vigencia">Redação pela Lei nº 6.515/1977</span></div>
+            <div class="paragrafo"><strong>§ 6º</strong> O divórcio realizado no estrangeiro, se um ou ambos os cônjuges forem brasileiros, só será reconhecido no Brasil depois de 1 (um) ano da data da sentença... <span class="nota-vigencia">Redação pela Lei nº 12.036/2009</span></div>
+            <div class="paragrafo"><strong>§ 7º</strong> Salvo o caso de abandono, o domicílio do chefe da família estende-se ao outro cônjuge e aos filhos não emancipados, e o do tutor ou curador aos incapazes sob sua guarda.</div>
+            <div class="paragrafo"><strong>§ 8º</strong> Quando a pessoa não tiver domicílio, considerar-se-á domiciliada no lugar de sua residência ou naquele em que se encontre.</div>
+        </div>
+
+        <!-- Artigo 8 -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 8º</div>
+            <div class="artigo-conteudo">Para qualificar os bens e regular as relações a eles concernentes, aplicar-se-á a lei do país em que estiverem situados.</div>
+            <div class="paragrafo"><strong>§ 1º</strong> Aplicar-se-á a lei do país em que for domiciliado o proprietário, quanto aos bens móveis que ele trouxer ou se destinarem a transporte para outros lugares.</div>
+            <div class="paragrafo"><strong>§ 2º</strong> O penhor regula-se pela lei do domicílio que tiver a pessoa, em cuja posse se encontre a coisa apenhada.</div>
+        </div>
+
+        <!-- Artigo 9 -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 9º</div>
+            <div class="artigo-conteudo">Para qualificar e reger as obrigações, aplicar-se-á a lei do país em que se constituirem.</div>
+            <div class="paragrafo"><strong>§ 1º</strong> Destinando-se a obrigação a ser executada no Brasil e dependendo de forma essencial, será esta observada, admitidas as peculiaridades da lei estrangeira quanto aos requisitos extrínsecos do ato.</div>
+            <div class="paragrafo"><strong>§ 2º</strong> A obrigação resultante do contrato reputa-se constituída no lugar em que residir o proponente.</div>
+        </div>
+
+        <!-- Artigo 10 -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 10</div>
+            <div class="artigo-conteudo">A sucessão por morte ou por ausência obedece à lei do país em que domiciliado o defunto ou o desaparecido, qualquer que seja a natureza e a situação dos bens.</div>
+            <div class="paragrafo"><strong>§ 1º</strong> A sucessão de bens de estrangeiros, situados no País, será regulada pela lei brasileira em benefício do cônjuge ou dos filhos brasileiros... <span class="nota-vigencia">Redação pela Lei nº 9.047/1995</span></div>
+            <div class="paragrafo"><strong>§ 2º</strong> A lei do domicílio do herdeiro ou legatário regula a capacidade para suceder.</div>
+        </div>
+
+        <!-- Artigo 11 -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 11</div>
+            <div class="artigo-conteudo">As organizações destinadas a fins de interesse coletivo, como as sociedades e as fundações, obedecem à lei do Estado em que se constituirem.</div>
+            <div class="paragrafo"><strong>§ 1º</strong> Não poderão, entretanto, ter no Brasil filiais, agências ou estabelecimentos antes de serem os atos constitutivos aprovados pelo Governo brasileiro...</div>
+            <div class="paragrafo"><strong>§ 2º</strong> Os Governos estrangeiros (...) não poderão adquirir no Brasil bens imóveis ou suscetíveis de desapropriação.</div>
+            <div class="paragrafo"><strong>§ 3º</strong> Os Governos estrangeiros podem adquirir a propriedade dos prédios necessários à sede dos representantes diplomáticos... <span class="nota-vigencia">Vide Lei nº 4.331/1964</span></div>
+        </div>
+
+        <!-- Artigo 12 ao 19 e seguintes, mantendo o estilo -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 12</div>
+            <div class="artigo-conteudo">É competente a autoridade judiciária brasileira, quando for o réu domiciliado no Brasil ou aqui tiver de ser cumprida a obrigação.</div>
+            <div class="paragrafo"><strong>§ 1º</strong> Só à autoridade judiciária brasileira compete conhecer das ações relativas a imóveis situados no Brasil.</div>
+            <div class="paragrafo"><strong>§ 2º</strong> A autoridade judiciária brasileira cumprirá, concedido o exequatur... as diligências deprecadas por autoridade estrangeira competente.</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 13</div>
+            <div class="artigo-conteudo">A prova dos fatos ocorridos em país estrangeiro rege-se pela lei que nele vigorar, quanto ao ônus e aos meios de produzir-se, não admitindo os tribunais brasileiros provas que a lei brasileira desconheça.</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 14</div>
+            <div class="artigo-conteudo">Não conhecendo a lei estrangeira, poderá o juiz exigir de quem a invoca prova do texto e da vigência.</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 15</div>
+            <div class="artigo-conteudo">Será executada no Brasil a sentença proferida no estrangeiro, que reúna os seguintes requisitos:</div>
+            <div class="paragrafo"><strong>a)</strong> haver sido proferida por juiz competente;</div>
+            <div class="paragrafo"><strong>b)</strong> terem sido as partes citadas ou haver-se legalmente verificado à revelia;</div>
+            <div class="paragrafo"><strong>c)</strong> ter passado em julgado e estar revestida das formalidades necessárias;</div>
+            <div class="paragrafo"><strong>d)</strong> estar traduzida por intérprete autorizado;</div>
+            <div class="paragrafo"><strong>e)</strong> ter sido homologada pelo Supremo Tribunal Federal. <span class="nota-vigencia">Vide art.105, I, i da CF</span></div>
+            <div class="paragrafo revogado"><strong>Parágrafo único.</strong> (Revogado pela Lei nº 12.036/2009)</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 16</div>
+            <div class="artigo-conteudo">Quando se houver de aplicar a lei estrangeira, ter-se-á em vista a disposição desta, sem considerar-se qualquer remissão por ela feita a outra lei.</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 17</div>
+            <div class="artigo-conteudo">As leis, atos e sentenças de outro país (...) não terão eficácia no Brasil, quando ofenderem a soberania nacional, a ordem pública e os bons costumes.</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 18 <span class="destaque-info">Redação pela Lei nº 3.238/1957</span></div>
+            <div class="artigo-conteudo">Tratando-se de brasileiros, são competentes as autoridades consulares brasileiras para lhes celebrar o casamento e os mais atos de Registro Civil...</div>
+            <div class="paragrafo"><strong>§ 1º</strong> As autoridades consulares brasileiras também poderão celebrar a separação consensual e o divórcio consensual... <span class="nota-vigencia">Incluído pela Lei nº 12.874/2013</span></div>
+            <div class="paragrafo"><strong>§ 2º</strong> É indispensável a assistência de advogado, devidamente constituído... <span class="nota-vigencia">Incluído pela Lei nº 12.874/2013</span></div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 19</div>
+            <div class="artigo-conteudo">Reputam-se válidos todos os atos indicados no artigo anterior e celebrados pelos cônsules brasileiros na vigência do Decreto-lei nº 4.657... <span class="nota-vigencia">Incluído pela Lei nº 3.238/1957</span></div>
+            <div class="paragrafo"><strong>Parágrafo único.</strong> No caso em que a celebração desses atos tiver sido recusada... <span class="nota-vigencia">Incluído pela Lei nº 3.238/1957</span></div>
+        </div>
+
+        <!-- Artigos 20 a 30 (inovação da Lei 13.655/2018) -->
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 20 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">Nas esferas administrativa, controladora e judicial, não se decidirá com base em valores jurídicos abstratos sem que sejam consideradas as consequências práticas da decisão.</div>
+            <div class="paragrafo"><strong>Parágrafo único.</strong> A motivação demonstrará a necessidade e a adequação da medida imposta...</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 21 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">A decisão que decretar a invalidação de ato, contrato, ajuste, processo ou norma administrativa deverá indicar de modo expresso suas consequências jurídicas e administrativas.</div>
+            <div class="paragrafo"><strong>Parágrafo único.</strong> A decisão deverá indicar as condições para que a regularização ocorra de modo proporcional e equânime...</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 22 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">Na interpretação de normas sobre gestão pública, serão considerados os obstáculos e as dificuldades reais do gestor...</div>
+            <div class="paragrafo"><strong>§ 1º</strong> Em decisão sobre regularidade de conduta... serão consideradas as circunstâncias práticas que houverem imposto, limitado ou condicionado a ação do agente.</div>
+            <div class="paragrafo"><strong>§ 2º</strong> Na aplicação de sanções, serão consideradas a natureza e a gravidade da infração...</div>
+            <div class="paragrafo"><strong>§ 3º</strong> As sanções aplicadas ao agente serão levadas em conta na dosimetria das demais sanções...</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 23 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">A decisão que estabelecer interpretação ou orientação nova sobre norma de conteúdo indeterminado... deverá prever regime de transição...</div>
+            <div class="paragrafo revogado"><strong>Parágrafo único.</strong> (VETADO).</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 24 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">A revisão quanto à validade de ato, contrato, ajuste, processo ou norma administrativa cuja produção já se houver completado levará em conta as orientações gerais da época...</div>
+            <div class="paragrafo"><strong>Parágrafo único.</strong> Consideram-se orientações gerais as interpretações e especificações contidas em atos públicos de caráter geral...</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 25 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo vetado">(VETADO).</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 26 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">Para eliminar irregularidade, incerteza jurídica ou situação contenciosa... a autoridade administrativa poderá celebrar compromisso com os interessados...</div>
+            <div class="paragrafo"><strong>§ 1º</strong> O compromisso referido no caput:</div>
+            <div class="paragrafo"><strong>I -</strong> buscará solução jurídica proporcional, equânime, eficiente...</div>
+            <div class="paragrafo revogado"><strong>II –</strong> (VETADO);</div>
+            <div class="paragrafo"><strong>III -</strong> não poderá conferir desoneração permanente de dever...</div>
+            <div class="paragrafo"><strong>IV -</strong> deverá prever com clareza as obrigações das partes...</div>
+            <div class="paragrafo revogado"><strong>§ 2º</strong> (VETADO).</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 27 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">A decisão do processo poderá impor compensação por benefícios indevidos ou prejuízos anormais ou injustos...</div>
+            <div class="paragrafo"><strong>§ 1º</strong> A decisão sobre a compensação será motivada...</div>
+            <div class="paragrafo"><strong>§ 2º</strong> Para prevenir ou regular a compensação, poderá ser celebrado compromisso processual...</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 28 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">O agente público responderá pessoalmente por suas decisões ou opiniões técnicas em caso de dolo ou erro grosseiro.</div>
+            <div class="paragrafo revogado"><strong>§ 1º</strong> (VETADO).</div>
+            <div class="paragrafo revogado"><strong>§ 2º</strong> (VETADO).</div>
+            <div class="paragrafo revogado"><strong>§ 3º</strong> (VETADO).</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 29 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">Em qualquer órgão ou Poder, a edição de atos normativos... poderá ser precedida de consulta pública...</div>
+            <div class="paragrafo"><strong>§ 1º</strong> A convocação conterá a minuta do ato normativo e fixará o prazo...</div>
+            <div class="paragrafo revogado"><strong>§ 2º</strong> (VETADO).</div>
+        </div>
+
+        <div class="artigo">
+            <div class="artigo-titulo">Art. 30 <span class="destaque-info">Incluído pela Lei nº 13.655/2018</span></div>
+            <div class="artigo-conteudo">As autoridades públicas devem atuar para aumentar a segurança jurídica na aplicação das normas...</div>
+            <div class="paragrafo"><strong>Parágrafo único.</strong> Os instrumentos previstos no caput terão caráter vinculante em relação ao órgão ou entidade a que se destinam, até ulterior revisão.</div>
+        </div>
+
+        <hr>
+
+        <div class="cidade-data">
+            Rio de Janeiro, 4 de setembro de 1942, 121º da Independência e 54º da República.
+        </div>
+
+        <div class="assinatura">
+            GETULIO VARGAS<br>
+            <span style="font-weight:500;">Alexandre Marcondes Filho</span><br>
+            <span style="font-weight:500;">Oswaldo Aranha</span>
+        </div>
+
+        <div class="rodape-nota">
+            Este texto não substitui o publicado no DOU de 9.9.1942, retificado em 8.10.1942 e retificado em 17.6.1943.
+        </div>
+    </div>
+</body>
+</html>
